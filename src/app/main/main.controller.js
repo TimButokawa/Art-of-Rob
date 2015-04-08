@@ -1,10 +1,10 @@
 (function() {
   'use strict';
 
-  angular.module('robBrown').controller('Main', Main);
+    angular.module('robBrown').controller('Main', Main);
 
-  function Main() {
-    var vm = this;
-    vm.title = 'rob brown';
-  }
+    function Main() {
+        var vm = this;
+        vm.title = 'rob brown';
+    }
 })();

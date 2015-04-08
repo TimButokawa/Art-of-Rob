@@ -24,8 +24,15 @@
     <!--[if lt IE 10]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <div ui-view></div>
+    <main class="container row-reset">
+        <header>
+            <h1>rob brown</h1>
+        </header>
+        <div ng-include="'components/navbar/navbar.html'"></div>
+        <section>
+            <div ui-view></div>
+        </section>
+    </main>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
