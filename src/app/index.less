@@ -1,1 +1,22 @@
-// main styles
+// common styles
+// bootstrap overrides
+@font-family-sans-serif: "Century Gothic", Verdana;
+
+// colors
+@white: #fefefe;
+@black: #4d4d4d;
+@grey: #cccccc;
+
+// font size
+@16: 1.14em;
+@12: .857em;
+
+// global
+body { color: @black; }
+a {
+    color: @black;
+    &:hover {
+        text-decoration: none;
+        color: @grey;
+    }
+}
