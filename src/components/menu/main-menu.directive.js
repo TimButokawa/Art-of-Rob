@@ -9,7 +9,7 @@
             templateUrl: '../../components/menu/main-menu.html',
             scope: {
                 image: '@',
-                title: '@'
+                project: '@'
             }
         };
         return directive;
