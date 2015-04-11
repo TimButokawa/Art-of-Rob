@@ -15,7 +15,13 @@
                 })
                 .state('lab', {
                     url: '/lab',
-                    templateUrl: 'app/lab/lab.html'
+                    templateUrl: 'app/lab/lab.html',
+                    controller: 'InTheLab as lab',
+                    resolve: {
+                        images: function(instagramService) {
+                            return instagramService.getImages();
+                        }
+                    }
                 })
                 .state('about', {
                     url: '/about',
