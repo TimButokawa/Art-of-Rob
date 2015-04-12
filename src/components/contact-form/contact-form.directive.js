@@ -13,24 +13,35 @@
         return directive;
     }
 
+    ContactMe.$inject = ['$http'];
+
     function ContactMe($http) {
         var vm = this;
         vm.submit = submit;
-        vm.title = 'foo bar';
+        vm.messageHasBeenSent = false;
+        vm.showErrorMessage = false;
+        vm.showSuccessMessage = false;
 
         function submit(info) {
-            // TODO: submit php mailer
             // TODO: eventual submit service
-            console.log(info);
-            console.log('sending email');
+            vm.messageHasBeenSent = true;
             $http({
                 method  : 'POST',
-                url     : '../../components/contact-form/contact.php',
+                url     : '../../components/contact-form/contact-rob.php',
                 data    : $.param(info),
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
             })
             .success(function(data) {
-                console.log(data);
+                if(data.success) {
+                    vm.showSuccessMessage = true;
+                    console.log('success', data);
+                } else {
+                    vm.showErrorMessage = true;
+                }
+            })
+            .error(function(data, status) {
+                vm.showErrorMessage = true;
+                console.log('error: ', status);
             });
         }
     }
