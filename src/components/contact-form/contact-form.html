@@ -1,0 +1,70 @@
+<form ng-submit="contact.$valid && information.submit(info)" name="contact" novalidate>
+    <div class="col-sm-6">
+        <div
+            class="form-group"
+            ng-class="{ 'has-error': contact.$submitted && nameField.$error.required }">
+            <ng-form name="nameField">
+                <input
+                    type="text"
+                    name="firstName"
+                    class="form-control has-error"
+                    ng-model="info.firstName"
+                    placeholder="Name*"
+                    required>
+                <span class="help-block" ng-show="contact.$submitted && nameField.$error.required">Please enter a name.</span>
+            </ng-form>
+        </div>
+        <div
+            class="form-group"
+            ng-class="{ 'has-error': contact.$submitted && emailField.$error.required }">
+            <ng-form name="emailField">
+                <input
+                    type="email"
+                    name="emailAddress"
+                    class="form-control has-error"
+                    ng-model="info.emailAddress"
+                    placeholder="Email*"
+                    required>
+                <span class="help-block" ng-show="contact.$submitted && emailField.$error.required">Please enter an email address.</span>
+                <span class="help-block" ng-show="contact.$submitted && emailField.$error.email">Please enter a valid email address.</span>
+            </ng-form>
+        </div>
+        <div class="form-group">
+            <ng-form name="organization">
+                <input
+                    type="text"
+                    name="organization"
+                    class="form-control"
+                    ng-model="info.organization"
+                    placeholder="Organization">
+            </ng-form>
+        </div>
+        <div class="form-group">
+            <ng-form name="subject">
+                <input
+                    type="text"
+                    name="subject"
+                    class="form-control"
+                    ng-model="info.Subject"
+                    placeholder="Subject">
+            </ng-form>
+        </div>
+        <div
+            class="form-group"
+            ng-class="{ 'has-error': contact.$submitted && message.$error.required }">
+            <ng-form name="message">
+                <textarea
+                    name="message"
+                    class="form-control has-error"
+                    ng-model="info.message"
+                    placeholder="Message*"
+                    required></textarea>
+                <span class="help-block" ng-show="contact.$submitted && message.$error.required">Please write a message.</span>
+            </ng-form>
+        </div>
+        <div class="form-group">
+            <input type="submit" name="submit" class="btn btn-large" value="Continue">
+        </div>
+    </div>
+    <pre>{{ info | json }}</pre>
+</form>
