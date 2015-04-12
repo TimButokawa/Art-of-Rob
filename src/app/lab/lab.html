@@ -1,7 +1,6 @@
-<h2>in the lab</h2>
-<div class="col-sm-4 reset-padding">
+<div class="col-sm-4 reset-padding" ng-repeat="image in lab.images">
     <div
         insta-rad
-        image="http://placehold.it/100"
-        from="www.foo.bar"></div>
+        image="{{ image.standard_resolution.url }}"
+        from="#"></div>
 </div>
