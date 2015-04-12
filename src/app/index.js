@@ -5,9 +5,46 @@
         .config(function ($stateProvider, $urlRouterProvider) {
             $stateProvider
                 .state('projects', {
-                    url: '/',
-                    templateUrl: 'app/projects/projects.html',
+                    url: '/projects',
+                    template: '<span ui-view autoscroll="true"></span>',
                     controller: 'Projects as project'
+                })
+                .state('projects.menu', {
+                    url: '/menu',
+                    templateUrl: 'app/projects/projects.html'
+                })
+                .state('projects.desk', {
+                    url: '/desk',
+                    templateUrl: 'app/projects/drawing-desk/drawing-desk.html'
+                })
+                .state('projects.pod', {
+                    url: '/pod',
+                    templateUrl: 'app/projects/pod/drawing-pod.html'
+                })
+                .state('projects.sound', {
+                    url: '/sound',
+                    templateUrl: 'app/projects/sound-system/sound-system.html'
+                })
+                .state('projects.magical', {
+                    url: '/magical',
+                    templateUrl: 'app/projects/magical/magical-mistakes.html'
+                })
+                .state('projects.breath', {
+                    url: '/breath',
+                    templateUrl: 'app/projects/breath/breath.html',
+                    controller: 'Breath as breath'
+                })
+                .state('projects.patternone', {
+                    url: '/pattern-one',
+                    templateUrl: 'app/projects/pattern/pattern-one.html'
+                })
+                .state('projects.patterntwo', {
+                    url: '/pattern-two',
+                    templateUrl: 'app/projects/pattern/pattern-two.html'
+                })
+                .state('projects.sketch', {
+                    url: '/sketch',
+                    templateUrl: 'app/projects/sketch/sketch.html'
                 })
                 .state('works', {
                     url: '/works',
@@ -40,7 +77,7 @@
                     templateUrl: 'app/links/links.html'
                 });
 
-            $urlRouterProvider.otherwise('/');
+            $urlRouterProvider.otherwise('/projects/menu');
         })
     ;
 })();
