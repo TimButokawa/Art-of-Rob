@@ -1,0 +1,32 @@
+.projects {
+    .row { margin-bottom: 20px; }
+    .image-gallery {
+        margin: 0 0 40px 0;
+        // TODO: discuss overflow
+        max-height: 600px;
+        overflow: hidden;
+        &:hover { overflow: auto; }
+        @media(min-width: @screen-sm-min) {
+            max-height: 100%;
+            overflow: auto;
+        }
+    }
+    .audio-clip {
+        width: 100%;
+        @media(min-width: @screen-sm-min) { width: 50%; }
+    }
+    ul.description {
+        padding-left: 0;
+        li {
+            list-style-type: none;
+            &:first-child { font-weight: bold; }
+            span {
+                font-weight: bold;
+            }
+        }
+        @media(min-width: @screen-sm-min) {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
