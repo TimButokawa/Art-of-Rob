@@ -47,9 +47,14 @@
                     url: '/pattern-two',
                     templateUrl: 'app/projects/pattern/pattern-two.html'
                 })
-                .state('projects.sketch', {
-                    url: '/sketch',
-                    templateUrl: 'app/projects/sketch/sketch.html'
+                // TODO: add this when sketchbook is back
+                // .state('projects.sketch', {
+                //     url: '/sketch',
+                //     templateUrl: 'app/projects/sketch/sketch.html'
+                // })
+                .state('projects.riso', {
+                    url: '/riso',
+                    templateUrl: 'app/projects/riso/riso.html'
                 })
                 .state('works', {
                     url: '/works',
