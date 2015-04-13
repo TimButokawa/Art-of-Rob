@@ -17,7 +17,10 @@ blockquote {
 @12: .857em;
 
 // global
-body { color: @black; }
+body {
+    color: @black;
+    min-width: 320px;
+}
 a {
     color: @black;
     text-decoration: none;
@@ -34,7 +37,7 @@ a {
 }
 section,
 header,
-nav ul {
+nav ul.main-menu {
     max-width: 960px;
     margin: 0 auto;
 }
