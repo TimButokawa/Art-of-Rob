@@ -6,7 +6,7 @@
     function mainMenu() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'components/menu/main-menu.html',
+            templateUrl: '../../components/menu/main-menu.html',
             scope: {
                 image: '@',
                 project: '@'

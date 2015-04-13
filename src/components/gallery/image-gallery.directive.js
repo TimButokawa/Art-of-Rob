@@ -6,7 +6,7 @@
     function lightboxImage() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'components/gallery/gallery-image.html',
+            templateUrl: '../../components/gallery/gallery-image.html',
             scope: {
                 imageGroup: '@',
                 imageTitle: '@',

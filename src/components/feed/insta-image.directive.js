@@ -6,7 +6,7 @@
     function instaRad() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'components/feed/insta-image.html',
+            templateUrl: '../../components/feed/insta-image.html',
             scope: {
                 image: '@',
                 from:'@'
