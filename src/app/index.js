@@ -34,11 +34,16 @@
                     templateUrl: 'app/projects/breath/breath.html',
                     controller: 'Breath as breath'
                 })
-                .state('projects.patternone', {
-                    url: '/pattern-one',
-                    templateUrl: 'app/projects/pattern/pattern-one.html'
+                .state('projects.pattern', {
+                    abstract: true,
+                    template: '<span ui-view></span>',
+                    controller: 'PatternCity as pattern'
                 })
-                .state('projects.patterntwo', {
+                .state('projects.pattern.one', {
+                    url: '/pattern-one',
+                    templateUrl: 'app/projects/pattern/pattern-one.html',
+                })
+                .state('projects.pattern.two', {
                     url: '/pattern-two',
                     templateUrl: 'app/projects/pattern/pattern-two.html'
                 })

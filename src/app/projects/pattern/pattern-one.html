@@ -1,16 +1,16 @@
 <h2>patterncity 001</h2>
-<div class="row">
-    <div class="col-sm-12">
-        <!-- TODO: photo swip -->
-    </div>
-    <div class="col-sm-12">
-        <!-- TODO: this audio -->
-        <audio
-            controls class="audio-clip">
-            <source src="audio/patternicityclip.mp3" type="audio/mpeg">
-        </audio>
+<div class="image-gallery">
+    <div class="col-sm-3 reset-padding" ng-repeat="image in pattern.patternImages">
+        <div
+            lightbox-image
+            image-group="{{ image.group }}"
+            image-title="{{ image.title }}",
+            image-description=" {{ image.description }}"
+            image-source="../../assets/images/{{ image.source }}">
+        </div>
     </div>
 </div>
+<div class="clearfix"></div>
 <div class="row">
     <div class="col-sm-4">
         <div>
