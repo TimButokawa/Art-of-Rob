@@ -6,7 +6,7 @@
     function contactForm() {
         var directive = {
             restrict: 'EA',
-            templateUrl: '../../components/contact-form/contact-form.html',
+            templateUrl: 'components/contact-form/contact-form.html',
             controller: ContactMe,
             controllerAs: 'information'
         };
@@ -27,7 +27,7 @@
             vm.messageHasBeenSent = true;
             $http({
                 method  : 'POST',
-                url     : '../../components/contact-form/contact-rob.php',
+                url     : 'components/contact-form/contact-rob.php',
                 data    : $.param(info),
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
             })
