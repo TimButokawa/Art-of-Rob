@@ -6,7 +6,7 @@
             $stateProvider
                 .state('projects', {
                     url: '/projects',
-                    template: '<span ui-view></span>',
+                    template: '<div class="projects"><span ui-view></span><div>',
                     controller: 'Projects as project'
                 })
                 .state('projects.menu', {
@@ -23,7 +23,8 @@
                 })
                 .state('projects.sound', {
                     url: '/sound',
-                    templateUrl: 'app/projects/sound-system/sound-system.html'
+                    templateUrl: 'app/projects/sound-system/sound-system.html',
+                    controller: 'SoundSystem as system'
                 })
                 .state('projects.magical', {
                     url: '/magical',
@@ -82,10 +83,12 @@
                     url: '/contact',
                     templateUrl: 'app/contact/contact.html'
                 })
-                .state('links', {
-                    url: '/links',
-                    templateUrl: 'app/links/links.html'
-                });
+                // TODO: add when links are back
+                // .state('links', {
+                //     url: '/links',
+                //     templateUrl: 'app/links/links.html'
+                // })
+                ;
 
             $urlRouterProvider.otherwise('/projects/menu');
         })

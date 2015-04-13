@@ -6,3 +6,5 @@ dist/
 *.php
 *.DS_store
 images/
+audio/
+.mp3
