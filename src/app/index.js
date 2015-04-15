@@ -6,7 +6,7 @@
             $stateProvider
                 .state('projects', {
                     url: '/projects',
-                    template: '<div class="projects"><span ui-view></span><div>',
+                    template: '<div class="projects"><span ui-view autoscroll></span><div>',
                     controller: 'Projects as project'
                 })
                 .state('projects.menu', {
@@ -37,7 +37,7 @@
                 })
                 .state('projects.pattern', {
                     abstract: true,
-                    template: '<span ui-view></span>',
+                    template: '<span ui-view autoscroll></span>',
                     controller: 'PatternCity as pattern'
                 })
                 .state('projects.pattern.one', {
@@ -57,10 +57,11 @@
                     url: '/riso',
                     templateUrl: 'app/projects/riso/riso.html'
                 })
-                .state('works', {
-                    url: '/works',
-                    templateUrl: 'app/works/works.html'
-                })
+                // TODO: add this when 2d works is back
+                // .state('works', {
+                //     url: '/works',
+                //     templateUrl: 'app/works/works.html'
+                // })
                 .state('lab', {
                     url: '/lab',
                     templateUrl: 'app/lab/lab.html',
