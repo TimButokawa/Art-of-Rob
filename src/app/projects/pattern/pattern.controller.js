@@ -131,12 +131,6 @@
             },
             {
                 group: 'pattern',
-                source: 'pattern-002-10.jpg',
-                title: 'nine',
-                description: 'digital print, gouache, and screen print on panel / 2013 / 15" x 15"'
-            },
-            {
-                group: 'pattern',
                 source: 'pattern-002-11.jpg',
                 title: 'ten',
                 description: 'digital print, gouache, and screen print on panel / 2013 / 15" x 15"'
