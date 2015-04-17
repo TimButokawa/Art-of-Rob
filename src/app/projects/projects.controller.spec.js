@@ -1,22 +1,18 @@
 'use strict';
 
-describe('controllers', function(){
-  var scope;
+describe('controller: Projects...', function(){
+    var scope, controller;
+    beforeEach(module('robBrown'));
 
-  beforeEach(module('robBrown'));
+    beforeEach(inject(function($rootScope, $controller) {
+        scope = $rootScope.$new();
+        controller = $controller;
+    }));
 
-  beforeEach(inject(function($rootScope) {
-    scope = $rootScope.$new();
-  }));
-
-  it('should define more than 5 awesome things', inject(function($controller) {
-    expect(scope.awesomeThings).toBeUndefined();
-
-    $controller('Projects', {
-      $scope: scope
+    it('should define a title...', function() {
+        var vm = controller('Projects', {
+            $scope: scope
+        });
+        expect(vm.title).toBe('rob brown');
     });
-
-    expect(angular.isArray(scope.awesomeThings)).toBeTruthy();
-    expect(scope.awesomeThings.length > 5).toBeTruthy();
-  }));
 });
