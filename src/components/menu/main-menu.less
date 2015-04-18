@@ -1,14 +1,16 @@
 .menu-wrapper {
     position: relative;
     cursor: pointer;
-    &:hover {
-        .title { opacity: 1; }
-        img { opacity: .8; }
+    @media(min-width: @screen-sm-min) {
+        &:hover {
+            .title { opacity: 1; }
+            img { opacity: .8; }
+        }
     }
     .title {
         width: 100%;
         text-align: center;
-        opacity: 0;
+        opacity: 1;
         color: @white;
         position: absolute;
         top: 50%;
@@ -17,6 +19,9 @@
         -moz-transform: translate(-50%,-50%);
         transform: translate(-50%,-50%);
         z-index: 10;
+    }
+    @media(min-width: @screen-sm-min) {
+        .title { opacity: 0; }
     }
     img {
         -webkit-backface-visibility: hidden;
