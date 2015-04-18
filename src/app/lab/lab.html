@@ -1,8 +1,7 @@
 <h2>in the lab</h2>
 <div class="col-sm-4 reset-padding" ng-repeat="image in lab.images">
-    <!-- TODO: hook up url -->
     <div
         insta-rad
-        image="{{ image.standard_resolution.url }}"
-        from="#"></div>
+        image="{{ image.images.standard_resolution.url }}"
+        source="{{ image.link }}"></div>
 </div>

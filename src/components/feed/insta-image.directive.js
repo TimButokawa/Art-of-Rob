@@ -9,7 +9,7 @@
             templateUrl: 'components/feed/insta-image.html',
             scope: {
                 image: '@',
-                from:'@'
+                source:'@'
             }
         };
         return directive;

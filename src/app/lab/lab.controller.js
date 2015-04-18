@@ -7,7 +7,7 @@
 
     function InTheLab(images) {
         var vm = this;
-        vm.images = _.pluck(images, 'images');
+        vm.images = images;
         // TODO: pluck images and links in the service
     }
 })();
