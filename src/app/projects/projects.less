@@ -1,19 +1,11 @@
 .projects {
     .row { margin-bottom: 20px; }
     .image-gallery {
-        margin: 0 0 40px 0;
         // TODO: discuss overflow
-        max-height: 600px;
-        overflow: hidden;
-        &:hover { overflow: auto; }
-        @media(min-width: @screen-sm-min) {
-            max-height: 100%;
-            overflow: auto;
-            img { height: 240px; }
-        }
     }
     .audio-clip {
         width: 100%;
+        margin: 20px auto 5px auto;
         @media(min-width: @screen-sm-min) { width: 50%; }
     }
     ul.description {
