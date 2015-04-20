@@ -3,17 +3,19 @@ nav {
     margin-bottom: 20px;
     border-bottom: 2px solid @black;
     ul.main-menu {
+        display: none;
+        @media(min-width: @screen-sm-min) { display: block !important; }
         list-style-type: none;
         padding: 0;
         margin: 0;
         li {
-            display: none;
+            display: block;
             padding: 5px 0 0 0;
             font-size: @16;
             cursor: pointer;
             &:last-child { padding-bottom: 5px; }
             @media(min-width: @screen-sm-min) {
-                display: inline-table !important;
+                display: inline-table;
                 padding: 0 15px 0 0;
                 &:hover { color: @grey; }
             }
