@@ -14,7 +14,7 @@ describe('controller: Pattern...', function(){
             $scope: scope
         });
         expect(vm.patternImages.length > 8).toBeTruthy();
-        for( var i in vm.patternImages) {
+        for(var i in vm.patternImages) {
             var group = vm.patternImages[i].group;
             expect(group).toBe('pattern');
         }
