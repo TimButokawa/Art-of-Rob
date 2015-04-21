@@ -38,7 +38,12 @@
                 .state('projects.pattern', {
                     abstract: true,
                     template: '<span ui-view autoscroll></span>',
-                    controller: 'PatternCity as pattern'
+                    controller: 'PatternCity as pattern',
+                    resolve: {
+                        images: function(imageGalleryService) {
+                            return imageGalleryService.getPatternImages();
+                        }
+                    }
                 })
                 .state('projects.pattern.one', {
                     url: '/pattern-one',
