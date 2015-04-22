@@ -2,28 +2,58 @@
 
 describe('controller: Pattern...', function(){
     var scope, controller;
-    beforeEach(module('robBrown'));
-
-    beforeEach(inject(function($rootScope, $controller) {
-        scope = $rootScope.$new();
-        controller = $controller;
-    }));
-
-    it('should define have an array of images...', function() {
-        var vm = controller('PatternCity', {
-            $scope: scope
-        });
-        expect(vm.patternImages.length > 8).toBeTruthy();
-        for(var i in vm.patternImages) {
-            var group = vm.patternImages[i].group;
-            expect(group).toBe('pattern');
+    var images = [
+        {
+            patternOne: [
+                {
+                    group: 'pattern',
+                    title: 'one'
+                },
+                {
+                    group: 'pattern',
+                    title: 'two'
+                }
+            ],
+            patternTwo: [
+                {
+                    group: 'pattern-two',
+                    title: 'one'
+                },
+                {
+                    group: 'pattern-two',
+                    title: 'two'
+                },
+                {
+                    group: 'pattern-two',
+                    title: 'three'
+                }
+            ]
         }
+    ];
+
+    beforeEach(function() {
+        module('robBrown', function($provide) {
+            $provide.value('images', images);
+        });
+        inject(function($rootScope, $controller) {
+            scope = $rootScope.$new();
+            controller = $controller('PatternCity', {
+                $scope: scope,
+                patternImages: this.images,
+                patternTwoImages: this.images
+            });
+        });
     });
 
-    it('should define have an array of images...', function() {
-        var vm = controller('PatternCity', {
-            $scope: scope
-        });
-        expect(vm.patternTwoImages.length).toBe(12);
+    it('should get images for pattern one...', function() {
+        var vm = controller;
+        var numberOfPatternOneImages = vm.patternImages.length;
+        expect(numberOfPatternOneImages).toBe(2);
+    });
+
+    it('should get images for pattern two...', function() {
+        var vm = controller;
+        var numberOfPatternTwoImages = vm.patternTwoImages.length;
+        expect(numberOfPatternTwoImages).toBe(3);
     });
 });
