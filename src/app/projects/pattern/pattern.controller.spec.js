@@ -25,7 +25,7 @@ describe('controller: Pattern...', function(){
                 },
                 {
                     group: 'pattern-two',
-                    title: 'two'
+                    title: 'three'
                 }
             ]
         }
