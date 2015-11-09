@@ -11,7 +11,7 @@
 
         function getPatternImages() {
             var deferred = $q.defer();
-            $http.get('services/PatternImages/Get').success(function(data) {
+            $http.get('data/images/patternImages').success(function(data) {
                 deferred.resolve(data);
             });
             return deferred.promise;
