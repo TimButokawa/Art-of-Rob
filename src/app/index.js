@@ -6,7 +6,7 @@
             $stateProvider
                 .state('projects', {
                     url: '/projects',
-                    template: '<div class="projects"><span ui-view autoscroll></span><div>',
+                    template: '<div class="projects"><span ui-view></span><div>',
                     controller: 'Projects as project'
                 })
                 .state('projects.menu', {
