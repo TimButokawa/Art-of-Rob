@@ -1,0 +1,14 @@
+<h2>drawings</h2>
+<div class="row">
+    <div ng-repeat="drawing in drawings.drawings">
+        <div class="clearfix" ng-if="$index % 4 === 0"></div>
+        <div
+            class="col-sm-3"
+            lightbox-image
+            image-group="{{ drawing.group }}"
+            image-title="{{ drawing.title }}",
+            image-description=" {{ drawing.description }}"
+            image-source="assets/images/drawings/{{ drawing.source }}">
+        </div>
+    </div>
+</div>

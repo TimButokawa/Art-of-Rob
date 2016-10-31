@@ -10,6 +10,16 @@
                     template: '<div class="projects"><span ui-view></span><div>',
                     controller: 'Projects as project'
                 })
+                .state('drawings', {
+                    url: '/drawings',
+                    templateUrl: 'app/drawings/drawings.html',
+                    controller: 'DrawingsController as drawings',
+                    resolve: {
+                        drawings: function(imageGalleryService) {
+                            return imageGalleryService.getDrawings();
+                        }
+                    }
+                })
                 .state('projects.menu', {
                     url: '/menu',
                     templateUrl: 'app/projects/projects.html'
