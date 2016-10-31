@@ -1,13 +1,24 @@
 (function() {
     'use strict';
 
-    angular.module('robBrown', ['ui.router', 'ui.bootstrap'])
-        .config(function ($stateProvider, $urlRouterProvider) {
+    angular
+        .module('robBrown', ['ui.router', 'ui.bootstrap'])
+        .config(function($stateProvider, $urlRouterProvider) {
             $stateProvider
                 .state('projects', {
                     url: '/projects',
                     template: '<div class="projects"><span ui-view></span><div>',
                     controller: 'Projects as project'
+                })
+                .state('drawings', {
+                    url: '/drawings',
+                    templateUrl: 'app/drawings/drawings.html',
+                    controller: 'DrawingsController as drawings',
+                    resolve: {
+                        drawings: function(imageGalleryService) {
+                            return imageGalleryService.getDrawings();
+                        }
+                    }
                 })
                 .state('projects.menu', {
                     url: '/menu',
@@ -47,35 +58,15 @@
                 })
                 .state('projects.pattern.one', {
                     url: '/pattern-one',
-                    templateUrl: 'app/projects/pattern/pattern-one.html',
+                    templateUrl: 'app/projects/pattern/pattern-one.html'
                 })
                 .state('projects.pattern.two', {
                     url: '/pattern-two',
                     templateUrl: 'app/projects/pattern/pattern-two.html'
                 })
-                // TODO: add this when sketchbook is back
-                // .state('projects.sketch', {
-                //     url: '/sketch',
-                //     templateUrl: 'app/projects/sketch/sketch.html'
-                // })
                 .state('projects.riso', {
                     url: '/riso',
                     templateUrl: 'app/projects/riso/riso.html'
-                })
-                // TODO: add this when 2d works is back
-                // .state('works', {
-                //     url: '/works',
-                //     templateUrl: 'app/works/works.html'
-                // })
-                .state('lab', {
-                    url: '/lab',
-                    templateUrl: 'app/lab/lab.html',
-                    controller: 'InTheLab as lab',
-                    resolve: {
-                        images: function(instagramService) {
-                            return instagramService.getImages();
-                        }
-                    }
                 })
                 .state('about', {
                     url: '/about',
@@ -88,13 +79,7 @@
                 .state('contact', {
                     url: '/contact',
                     templateUrl: 'app/contact/contact.html'
-                })
-                // TODO: add when links are back
-                // .state('links', {
-                //     url: '/links',
-                //     templateUrl: 'app/links/links.html'
-                // })
-                ;
+                });
 
             $urlRouterProvider.otherwise('/projects/menu');
         })

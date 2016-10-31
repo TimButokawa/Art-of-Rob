@@ -11,7 +11,7 @@
                 imageGroup: '@',
                 imageTitle: '@',
                 imageDescription: '@',
-                imageSource: '@',
+                imageSource: '@'
             }
         };
         return directive;
